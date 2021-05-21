@@ -27,38 +27,39 @@
 	    </style>
   	</head>
   	<body>
-	  	<center>
+		<center>
 	  		<p></p>
-	  	    <div>
-	  	    	<button type="button" class="btn btn-primary" onclick="return refresh();">RESTART</button>
-	      	</div>
-	      	<p></p>
-				<table id="tictactoe">
-			    	<tr>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="1 1" onclick="return complete(id);"></button></td>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="1 2" onclick="return complete(id);"></button></td>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="1 3" onclick="return complete(id);"></button></td>
-					</tr>
-					<tr>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="2 1" onclick="return complete(id);"></button></td>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="2 2" onclick="return complete(id);"></button></td>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="2 3" onclick="return complete(id);"></button></td>
-					</tr>
-					<tr>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="3 1" onclick="return complete(id);"></button></td>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="3 2" onclick="return complete(id);"></button></td>
-						<td align="center" valign="middle"><button type="button" class="btn btn-light" id="3 3" onclick="return complete(id);"></button></td>
-					</tr>
-	            </table>
-		    <div class="container">
-		        <font size="20"><p id="10"></p></font>
-		    </div>
+	  	    	<div>
+	  	    		<button type="button" class="btn btn-primary" onclick="return refresh();">RESTART</button>
+	      		</div>
+	      		<p></p>
+			<table id="tictactoe">
+				<tr>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="1 1" onclick="return complete(id);"></button></td>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="1 2" onclick="return complete(id);"></button></td>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="1 3" onclick="return complete(id);"></button></td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="2 1" onclick="return complete(id);"></button></td>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="2 2" onclick="return complete(id);"></button></td>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="2 3" onclick="return complete(id);"></button></td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="3 1" onclick="return complete(id);"></button></td>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="3 2" onclick="return complete(id);"></button></td>
+					<td align="center" valign="middle"><button type="button" class="btn btn-light" id="3 3" onclick="return complete(id);"></button></td>
+				</tr>
+	            	</table>
+		    	<div class="container">
+		        	<font size="20"><p id="10"></p></font>
+		    	</div>
 	    </center>
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>	
 	    <script type="text/javascript">
 		    const table = new Array(6).fill(0).map(() => new Array(6).fill(0));
 		    var check = 0; // cu aceasta variabila verific daca se da click pe o casuta care contine x sau 0
 		    var round = 0; // in functie de paritatea valorii acestei variabile se pune x sau 0
+		    
 		    function complete(id) {
 		      	var length = id.length;
 		        var x = 0, y = 0;
@@ -75,14 +76,14 @@
 		        }
 		        if (check == '0') { // daca se da click pe o casuta goala
 		        	if (round % 2 == 0) {
-		            	document.getElementById(id).innerHTML = ("❌");
-		            	table[x][y] = 1;
-		            } else {
-		            	document.getElementById(id).innerHTML = ("0");
-		            	table[x][y] = 10;
+		            		document.getElementById(id).innerHTML = ("❌");
+		            		table[x][y] = 1;
+		            	} else {
+		            		document.getElementById(id).innerHTML = ("0");
+		            		table[x][y] = 10;
 		          	}
 		          	++round;
-		            return checkStatus();
+		            	return checkStatus();
 		        } else { // daca se da click pe o casuta in care exista deja x sau 0
 		        	if (check == '1') {
 		        		check = 0;
