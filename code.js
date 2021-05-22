@@ -4,9 +4,9 @@ var check = 0; // cu aceasta variabila verific daca se da click pe o casuta care
 var round = 0; // in functie de paritatea valorii acestei variabile se pune x sau 0
 
 function complete(id) {
-  	var length = id.length;
+    var length = id.length;
     var x = 0, y = 0;
-    for (var i = 0; i < length; ++i) {
+    for (var i = 0; i < length; ++i) { // transform id-ul in coordonate x si y
         if (id[i] !== ' ') {
           	y = ((y * 10) + (id[i] - '0'));
         } else {
@@ -14,8 +14,8 @@ function complete(id) {
           	y = 0;
         }
     }
-    if ((table[x][y] == '1' || table[x][y] == '10') && check != '7') {
-		check = 1;
+    if ((table[x][y] == '1' || table[x][y] == '10') && check != '7') { // verific daca se da click pe o casuta deja completata si ca nu s-a terminat jocul
+	check = 1;
     }
     if (check == '0') { // daca se da click pe o casuta goala
     	if (round % 2 == 0) {
@@ -45,21 +45,21 @@ function checkStatus() {
     		sumLine += table[i][j];
     		sumColumn += table[j][i];
     	}
-    	if (sumLine == '3' || sumColumn == '3') {
+    	if (sumLine == '3' || sumColumn == '3') { // verific daca a castigat X
     		document.getElementById("10").innerHTML = ("Congratulation! Player 1 (X) win!");
       		check = 7;
-    	} else if (sumLine == '30' || sumColumn == '30') {
+    	} else if (sumLine == '30' || sumColumn == '30') { // verific daca a castigat 0
     		document.getElementById("10").innerHTML = ("Congratulation! Player 2 (0) win!");
       		check = 7;
     	}
     }
-    if (table[1][1] + table[2][2] + table[3][3] == '3' || table[1][3] + table[2][2] + table[3][1] == '3') {
+    if (table[1][1] + table[2][2] + table[3][3] == '3' || table[1][3] + table[2][2] + table[3][1] == '3') {  // verific daca a castigat X
     	document.getElementById("10").innerHTML = ("Congratulation! Player 1 (X) win!");
     	check = 7;
-    } else if (table[1][1] + table[2][2] + table[3][3] == '30' || table[1][3] + table[2][2] + table[3][1] == '30') {
+    } else if (table[1][1] + table[2][2] + table[3][3] == '30' || table[1][3] + table[2][2] + table[3][1] == '30') {  // verific daca a castigat 0
     	document.getElementById("10").innerHTML = ("Congratulation! Player 2 (0) win!");
     	check = 7;
-    } else if (table[1][1] + table[1][2] + table[1][3] + table[2][1] + table[2][2] + table[2][3] + table[3][1] + table[3][2] + table[3][3] == '45') {
+    } else if (table[1][1] + table[1][2] + table[1][3] + table[2][1] + table[2][2] + table[2][3] + table[3][1] + table[3][2] + table[3][3] == '45') {  // verific daca au fost completate toate casutele si este egalitate
     	document.getElementById("10").innerHTML = ("Draw! Try again!");
     	check = 7;
     }
