@@ -27,7 +27,7 @@ function complete(id) {
       	}
       	++round;
         return checkStatus();
-    } else { // daca se da click pe o casuta in care exista deja x sau 0
+    } else { // daca se da click pe o casuta in care exista deja x / 0 sau jocul s-a terminat
     	if (check == '1') {
     		check = 0;
     		alert("Click on one of empties boxes!");
