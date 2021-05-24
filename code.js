@@ -43,9 +43,9 @@ function complete(x, y) {
 }
 
 function checkStatus() {
-    	for (var i = 1; i < 4; ++i) {
-    		var sumLine = 0, sumColumn = 0;
-		for (var j = 1; j < 4; ++j) {
+    	for (let i = 1; i < 4; ++i) {
+    		let sumLine = 0, sumColumn = 0;
+		for (let j = 1; j < 4; ++j) {
 			sumLine += table[i][j];
 			sumColumn += table[j][i];
 		}
