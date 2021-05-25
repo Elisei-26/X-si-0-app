@@ -30,7 +30,7 @@ function complete(x, y) {
         		table[x][y] = 10;
       		}
       		++round;
-        	var gameStatus = checkStatus();
+        	let gameStatus = checkStatus();
 		if (gameStatus == '1') {
 			document.getElementById("10").innerHTML = ("Congratulation! Player 1 (X) win!");
     			check = 7;
