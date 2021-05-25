@@ -33,13 +33,13 @@ function complete(x, y) {
         	var gameStatus = checkStatus();
 		if (gameStatus == '1') {
 			document.getElementById("10").innerHTML = ("Congratulation! Player 1 (X) win!");
-    		check = 7;
+    			check = 7;
 		} else if (gameStatus == '2') {
 			document.getElementById("10").innerHTML = ("Congratulation! Player 2 (0) win!");
-      		check = 7;
+      			check = 7;
 		} else if (gameStatus == '3') {
 			document.getElementById("10").innerHTML = ("Draw! Try again!");
-      		check = 7;
+      			check = 7;
 		}
     	} else { // if you click on a box where x or 0 already exists
     		if (check == '1') {
